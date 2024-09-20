@@ -17,11 +17,12 @@ const Home = () => {
         { id: 5, name: 'Product 5', price: 50, stock_count: 5 },
       ];
     //setProducts(initialProducts);
-
+      const apiURL = "https://marcinmuchaapp.azurewebsites.net/api/"
     const fetchUsersData = async () => {
       try {
         // Fetch data from the API endpoint
-        const response = await fetch(`${import.meta.env.VITE_API_URL}users`)
+        //const response = await fetch(`${import.meta.env.VITE_API_URL}users`)
+        const response = await fetch(`${apiURL}users`)
         
         if (!response.ok) {
           throw new Error('Failed to fetch data');
@@ -40,7 +41,8 @@ const Home = () => {
     const fetchProductsData = async () => {
       try {
         // Fetch data from the API endpoint
-        const response = await fetch(`${import.meta.env.VITE_API_URL}products`)
+        //const response = await fetch(`${import.meta.env.VITE_API_URL}products`)
+        const response = await fetch(`${apiURL}products`)
         
         if (!response.ok) {
           throw new Error('Failed to fetch data');
